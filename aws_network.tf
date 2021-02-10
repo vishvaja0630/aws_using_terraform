@@ -123,3 +123,7 @@ variable "access" {
 variable "secret" {
   type = string
 }
+variable "main_vpc_cidr" {
+    description = "CIDR of the VPC"
+    default = "10.0.0.0/16"
+}
