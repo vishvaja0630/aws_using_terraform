@@ -17,7 +17,7 @@ pipeline {
 	//using terraform destroy-always runs
 	post{
         always{
-               sh 'terraform destroy --auto-approve'	       
+               sh 'terraform destroy -var "access=$access_key" -var "secret=$secret_key" -auto-approve'	       
                }
          }
 	}
