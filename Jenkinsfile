@@ -9,7 +9,7 @@ pipeline {
        terraform init
        terraform plan  -var "access=$access_key" -var "secret=$secret_key"
        terraform apply -var "access=$access_key" -var "secret=$secret_key" -auto-approve
-       terraform destroy -var "access=$access_key" -var "secret=$secret_key" -auto-approve'''
+       #terraform destroy -var "access=$access_key" -var "secret=$secret_key" -auto-approve'''
        }
 	   }
 	 }
