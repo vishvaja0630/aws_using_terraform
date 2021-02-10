@@ -19,5 +19,5 @@ pipeline {
         always{
                sh 'terraform destroy --auto-approve'	       
                }
-      }
+         }
 	}
