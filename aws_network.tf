@@ -1,3 +1,9 @@
+provider "aws" {
+  region="ap-south-1"
+  access_key = var.access
+  secret_key = var.secret
+}
+
 resource "aws_vpc" "main" {
     cidr_block       = var.main_vpc_cidr
     instance_tenancy = "default"
@@ -109,4 +115,11 @@ resource "aws_security_group" "my-sg" {
 resource "aws_key_pair" "my_key" {
    key_name   = "new-key"
    public_key =  file("pub_key.pub")
+}
+
+variable "access" {
+  type = string
+}
+variable "secret" {
+  type = string
 }
