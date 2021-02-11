@@ -98,9 +98,9 @@ resource "aws_security_group" "my-sg" {
    vpc_id = aws_vpc.main.id
 
   ingress {
-    protocol    = "tcp"
-    from_port   = 22
-    to_port     = 22
+    protocol    = -1
+    from_port   = 0
+    to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -115,6 +115,10 @@ resource "aws_security_group" "my-sg" {
 resource "aws_key_pair" "my_key" {
    key_name   = "new-key"
    public_key =  file("pub_key.pub")
+}
+
+output "instance_ip_addr" {
+  value = aws_instance.my_instance.public_ip
 }
 
 variable "access" {
