@@ -8,9 +8,10 @@ pipeline {
        sh '''
        terraform init
        terraform apply -var "access=$access_key" -var "secret=$secret_key" -auto-approve
+       terraform destroy -var "access=$access_key" -var "secret=$secret_key" -auto-approve
        '''
        }
 	   }
 	 }
-	}//stages closed terraform destroy -var "access=$access_key" -var "secret=$secret_key" -auto-approve
+	}//stages closed 
 }
