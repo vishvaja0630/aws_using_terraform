@@ -118,7 +118,7 @@ resource "aws_key_pair" "my_key" {
 }
 
 output "instance_ip_addr" {
-  value = aws_instance.my_instance.public_ip
+  value = aws_instance.my-instance.public_ip
 }
 
 variable "access" {
